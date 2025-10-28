@@ -1,0 +1,30 @@
+from pptx import Presentation
+
+# Tạo file PPT mới
+prs = Presentation()
+
+# Danh sách nội dung slide
+slides_content = [
+    ("PHÁT TRIỂN KINH TẾ - XÃ HỘI ĐẮK LẮK VÀ BUÔN ĐÔN", "Gắn với bảo tồn tiếng nói, chữ viết dân tộc bản địa\nHọ tên: …\nLớp: …\nTrường: …\nNăm: 2025"),
+    ("Giới thiệu về tỉnh Đắk Lắk", "Trung tâm Tây Nguyên, thủ phủ Buôn Ma Thuột\nDân số gần 1,9 triệu\nĐịa hình cao nguyên bazan, giàu tiềm năng nông nghiệp và du lịch\nSinh sống của hơn 47 dân tộc"),
+    ("Phát triển kinh tế", "Vựa cà phê lớn nhất Việt Nam\nNông nghiệp, du lịch, năng lượng tái tạo\nLễ hội cà phê, lễ hội cồng chiêng"),
+    ("Phát triển xã hội", "Giáo dục – y tế được đầu tư\nChương trình nông thôn mới\nGiao thông, điện – nước cải thiện"),
+    ("Giới thiệu Buôn Đôn", "Nằm phía Tây Bắc tỉnh Đắk Lắk\nSông Sêrêpốk chảy qua\nNghề săn và thuần dưỡng voi, du lịch sinh thái\nNgười dân chủ yếu Êđê, Lào, M’nông và Kinh"),
+    ("Bản sắc văn hóa dân tộc", "Các dân tộc có tiếng nói và chữ viết riêng\nVăn hóa cồng chiêng, sử thi, nhà dài, lễ hội truyền thống"),
+    ("Nguy cơ mai một", "Giới trẻ ít nói tiếng dân tộc\nSách báo, truyền thông hạn chế\nVăn hóa truyền miệng dần bị thay thế"),
+    ("Biện pháp bảo tồn", "Đưa tiếng Êđê, M’nông vào trường học\nMở lớp dạy chữ Êđê\nKhuyến khích sử dụng tiếng mẹ đẻ\nỨng dụng công nghệ số\nTuyên truyền song ngữ"),
+    ("Khát vọng xây dựng quê hương", "Thanh niên Buôn Đôn tự hào về quê hương\nHọc tập, rèn luyện, góp phần phát triển\nHướng đến Buôn Đôn xanh, giàu, đẹp"),
+    ("Kết luận", "Giữ gìn tiếng nói, chữ viết là giữ linh hồn dân tộc\nPhát triển quê hương là trách nhiệm mỗi người con Đắk Lắk\nCảm ơn cô và các bạn đã lắng nghe!")
+]
+
+# Thêm slide và nội dung
+for title, content in slides_content:
+    slide_layout = prs.slide_layouts[1]  # Title and Content
+    slide = prs.slides.add_slide(slide_layout)
+    slide.shapes.title.text = title
+    slide.placeholders[1].text = content
+
+# Lưu file PPT
+prs.save("Phat_trien_DakLak_BuonDon.pptx")
+print("Đã tạo file PowerPoint: Phat_trien_DakLak_BuonDon.pptx")
+
